@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { View,Text,Image,ImageBackground, ScrollView, Button,Pressable,Modal,StatusBar, ActivityIndicator } from 'react-native';
+import { View,Text,Image,ImageBackground, ScrollView, 
+  Button,Pressable,Modal,StatusBar, ActivityIndicator, Alert } from 'react-native';
 const logoImg = require('./assets/adaptive-icon.png');
 
 export default function App() {
@@ -67,6 +68,20 @@ export default function App() {
         <ActivityIndicator size="large"/>
         <ActivityIndicator size="large" color="midnightblue" />
         <ActivityIndicator size="large" color="midnightblue" animating={false} />
+        */}
+        {/* Tutorial - 17
+        <Button title='Alert' onPress={() => Alert.alert("Invalid data!")}></Button>
+        <Button title='Alert2' onPress={() => Alert.alert("Invalid data!","Password must be provided.")}></Button>
+        <Button title='Alert3' onPress={() => Alert.alert("Invalid data!","Password must be provided.",[
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel pressed")
+          },
+          {
+            text: "Ok",
+            onPress: () => console.log("Ok pressed!")  
+          }
+        ])}></Button>
         */}
     </View>
   );
