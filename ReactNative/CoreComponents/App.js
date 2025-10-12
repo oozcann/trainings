@@ -5,6 +5,9 @@ export default function App() {
   return (
     <View style={styles.container}>
         <Text>StyleSheet API</Text>
+        <View style={styles.darkMode}>
+            <Text style={styles.darkModeText}>Style Inheritance</Text>
+        </View>
         <View style={[styles.box, styles.lightblueBg, styles.boxShadow]}>
             <Text>Lightblue Box</Text>
         </View>
@@ -17,6 +20,12 @@ export default function App() {
 
 const styles = StyleSheet.create({
     container: {flex: 1, backgroundColor: '#bfbaba',padding: 20},
+    darkMode: {
+        backgroundColor: "black"
+    },
+    darkModeText: {
+        color: "white"
+    },
     box: {
         width: "100%",
         height: "25%",
