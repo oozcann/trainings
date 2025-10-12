@@ -5,7 +5,7 @@ export default function App() {
   return (
     <View style={styles.container}>
         <Text>StyleSheet API</Text>
-        <View style={[styles.box, styles.lightblueBg]}>
+        <View style={[styles.box, styles.lightblueBg, styles.boxShadow]}>
             <Text>Lightblue Box</Text>
         </View>
         <View style={[styles.box, styles.lightgreenBg]}>
@@ -33,5 +33,14 @@ const styles = StyleSheet.create({
     },
     lightgreenBg: {
         backgroundColor: "lightgreen",
+    },
+    boxShadow: {
+        shadowColor: "#e50a0aff",
+        shadowOffset: {
+            width: 6,
+            height: 6
+        },
+        shadowOpacity: 0.7,
+        shadowRadius: 4
     }
 })
