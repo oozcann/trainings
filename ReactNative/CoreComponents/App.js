@@ -18,9 +18,15 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {flex: 1, backgroundColor: '#bfbaba',padding: 20},
     box: {
-        width: 200,
-        height: 100,
-        padding: 10
+        width: "100%",
+        height: "25%",
+        paddingHorizontal: 10,
+        paddingVertical: 20,
+        marginVertical: 10,
+        borderWidth: 2,
+        borderColor: "black",
+        borderStyle: "solid",
+        borderRadius: 10
     },
     lightblueBg: {
         backgroundColor: "lightblue",
