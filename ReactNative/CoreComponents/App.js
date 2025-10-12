@@ -1,7 +1,9 @@
-import { View,Text,Image,ImageBackground, ScrollView, Button,Pressable } from 'react-native';
+import { useState } from 'react';
+import { View,Text,Image,ImageBackground, ScrollView, Button,Pressable,Modal } from 'react-native';
 const logoImg = require('./assets/adaptive-icon.png');
 
 export default function App() {
+  let [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <View style={{flex: 1, backgroundColor: 'plum',padding: 20}}>
         {/* Tutorial - 10
@@ -42,6 +44,21 @@ export default function App() {
           <Text>Tıklanabilir Yazı</Text>
         </Pressable>
         */}
+        {/* Tutorial - 14
+        <Button title='Press' onPress={() => setIsModalVisible(true)}></Button>
+        <Modal 
+          visible={isModalVisible} 
+          onRequestClose={() => setIsModalVisible(false)} 
+          animationType='slide'
+          presentationStyle='pageSheet'// only for ios
+          >
+          <View style={{flex: 1, backgroundColor: 'green',padding: 20}}>
+            <Text>Modal Visible</Text>
+            <Button title='Close' onPress={() => setIsModalVisible(false)}></Button>
+          </View>
+        </Modal>
+        */}
+
     </View>
   );
 }
