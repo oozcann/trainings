@@ -1,4 +1,4 @@
-import { View,Text,Image,ImageBackground, ScrollView } from 'react-native';
+import { View,Text,Image,ImageBackground, ScrollView, Button } from 'react-native';
 const logoImg = require('./assets/adaptive-icon.png');
 
 export default function App() {
@@ -23,6 +23,9 @@ export default function App() {
           </Text>
           <Image source={logoImg} style={{width: 300, height: 300}}></Image>
         </ScrollView>
+        */}
+        {/* Tutorial - 12
+        <Button title='Submit' onPress={() => console.log('Button pressed!')}></Button>
         */}
     </View>
   );
