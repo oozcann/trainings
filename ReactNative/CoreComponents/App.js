@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View,Text,Image,ImageBackground, ScrollView, Button,Pressable,Modal,StatusBar } from 'react-native';
+import { View,Text,Image,ImageBackground, ScrollView, Button,Pressable,Modal,StatusBar, ActivityIndicator } from 'react-native';
 const logoImg = require('./assets/adaptive-icon.png');
 
 export default function App() {
@@ -61,6 +61,12 @@ export default function App() {
         {/* Tutorial - 15
         <StatusBar backgroundColor="#61dafb" />
         <Text>Test</Text>
+        */}
+        {/* Tutorial - 16
+        <ActivityIndicator/>
+        <ActivityIndicator size="large"/>
+        <ActivityIndicator size="large" color="midnightblue" />
+        <ActivityIndicator size="large" color="midnightblue" animating={false} />
         */}
     </View>
   );
