@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { View,Text,Image,ImageBackground, ScrollView, 
   Button,Pressable,Modal,StatusBar, ActivityIndicator, Alert } from 'react-native';
+import Greet from './components/Greet';
 const logoImg = require('./assets/adaptive-icon.png');
 
 export default function App() {
@@ -83,6 +84,10 @@ export default function App() {
           }
         ])}></Button>
         */}
+        {/* Tutorial - 18
+        <Greet name="Onur"></Greet>
+        */}  
+
     </View>
   );
 }
