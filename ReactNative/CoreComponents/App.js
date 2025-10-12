@@ -1,4 +1,4 @@
-import { View,Text,Image,ImageBackground, ScrollView, Button } from 'react-native';
+import { View,Text,Image,ImageBackground, ScrollView, Button,Pressable } from 'react-native';
 const logoImg = require('./assets/adaptive-icon.png');
 
 export default function App() {
@@ -26,6 +26,21 @@ export default function App() {
         */}
         {/* Tutorial - 12
         <Button title='Submit' onPress={() => console.log('Button pressed!')}></Button>
+        */}
+        {/* Tutorial - 13
+        <Pressable onPress={() => console.debug('Image pressed!')}>
+          <Image source={logoImg} style={{width: 300, height: 300}}></Image>
+        </Pressable>
+        <Pressable onPress={() => console.debug('Text pressed!')}>
+          <Text>Tıklanabilir Yazı</Text>
+        </Pressable>
+        <Pressable 
+          onPressIn={() => console.debug('OnPressIn pressed!')} 
+          onPressOut={() => console.debug('OnPressOut pressed!')}
+          onLongPress={() => console.log('onLongPress')}
+          >
+          <Text>Tıklanabilir Yazı</Text>
+        </Pressable>
         */}
     </View>
   );
