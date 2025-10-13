@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
         borderColor: "yellow",
         // flex:1
         height: 200,
-        flexWrap: "wrap" // belirli bir yükseklik varsa box'ın içine wrap etmeyi sağlar
+        flexWrap: "wrap", // belirli bir yükseklik varsa box'ın içine wrap etmeyi sağlar
+        alignContent: "flex-end" // içeriği wrap'teyken sağ-sol-orta gibi hizalar
     }
 })
 // alignSelf: "flex-start" flex item'lara uygulanır. flex-end, center vs. kendi başlarına yönlemek için
