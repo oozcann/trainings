@@ -5,9 +5,9 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-        <Box style={{ backgroundColor: "green"}}>Box 1</Box>
-        <Box style={{ backgroundColor: "blue"}}>Box 2</Box>
-        <Box style={{ backgroundColor: "red"}}>Box 3</Box>
+        <Box style={{ backgroundColor: "green",alignSelf: "flex-start"}}>Box 1</Box>
+        <Box style={{ backgroundColor: "blue", alignSelf: "flex-end"}}>Box 2</Box>
+        <Box style={{ backgroundColor: "red", alignSelf: "center"}}>Box 3</Box>
     </View>
   );
 }
