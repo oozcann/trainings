@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
         <Box style={{ backgroundColor: "green",alignSelf: "flex-start"}}>Box 1</Box>
         <Box style={{ backgroundColor: "blue", alignSelf: "flex-end"}}>Box 2</Box>
-        <Box style={{ backgroundColor: "red", alignSelf: "center"}}>Box 3</Box>
+        <Box style={{ backgroundColor: "red", alignSelf: "center", flexBasis: 140}}>Box 3</Box>
         <Box style={{ backgroundColor: "red", alignSelf: "center"}}>Box 3</Box>
         <Box style={{ backgroundColor: "red", alignSelf: "center"}}>Box 3</Box>
     </View>
@@ -30,3 +30,4 @@ const styles = StyleSheet.create({
     }
 })
 // alignSelf: "flex-start" flex item'lara uygulanır. flex-end, center vs. kendi başlarına yönlemek için
+// flexBasis: content'e uygulanır. yükseklik gibi ama boşta kalan alanı orantısal olarak alır
