@@ -5,10 +5,10 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-        <Box style={{ backgroundColor: "green"}}>Box 1</Box>
+        <Box style={{ backgroundColor: "green", top: 75, left:75}}>Box 1</Box>
         <Box style={{ backgroundColor: "blue"}}>Box 2</Box>
         <Box style={{ backgroundColor: "red"}}>Box 3</Box>
-        <Box style={{ backgroundColor: "red"}}>Box 3</Box>
+        <Box style={{ backgroundColor: "red", position: "absolute", top: 100, left:100}}>Box 3</Box>
         <Box style={{ backgroundColor: "red"}}>Box 3</Box>
     </View>
   );
