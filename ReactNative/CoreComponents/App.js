@@ -23,6 +23,8 @@ const styles = StyleSheet.create({
         borderColor: "yellow",
         // flex:1
         height: 200,
+        rowGap: 20, // satır boşluğu bırakır
+        columnGap: 20, // sütun boşluğu bırakır.
         flexWrap: "wrap", // belirli bir yükseklik varsa box'ın içine wrap etmeyi sağlar
         alignContent: "flex-end" // içeriği wrap'teyken sağ-sol-orta gibi hizalar
     }
