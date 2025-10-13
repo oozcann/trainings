@@ -8,6 +8,8 @@ export default function App() {
         <Box style={{ backgroundColor: "green",alignSelf: "flex-start"}}>Box 1</Box>
         <Box style={{ backgroundColor: "blue", alignSelf: "flex-end"}}>Box 2</Box>
         <Box style={{ backgroundColor: "red", alignSelf: "center"}}>Box 3</Box>
+        <Box style={{ backgroundColor: "red", alignSelf: "center"}}>Box 3</Box>
+        <Box style={{ backgroundColor: "red", alignSelf: "center"}}>Box 3</Box>
     </View>
   );
 }
@@ -19,7 +21,9 @@ const styles = StyleSheet.create({
         alignItems: "stretch", // stretch(default), center, baseline,flex-start,flex-end
         borderWidth: 6,
         borderColor: "yellow",
-        flex:1
+        // flex:1
+        height: 200,
+        flexWrap: "wrap" // belirli bir yükseklik varsa box'ın içine wrap etmeyi sağlar
     }
 })
 // alignSelf: "flex-start" flex item'lara uygulanır. flex-end, center vs. kendi başlarına yönlemek için
