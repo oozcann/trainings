@@ -22,3 +22,4 @@ const styles = StyleSheet.create({
         flex:1
     }
 })
+// alignSelf: "flex-start" flex item'lara uygulanır. flex-end, center vs. kendi başlarına yönlemek için
