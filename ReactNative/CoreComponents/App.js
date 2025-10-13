@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
     container: {
         marginTop: 20,
         // flexDirection: "column-reverse", // column(defaulf), column-reverse,row,row-reverse
-        justifyContent: "space-evenly", // flex-start(default),center,flex-end,space-around, space-between,space-evenly
+        // justifyContent: "space-evenly", // flex-start(default),center,flex-end,space-around, space-between,space-evenly
+        alignItems: "stretch", // stretch(default), center, baseline,flex-start,flex-end
         borderWidth: 6,
         borderColor: "yellow",
         flex:1
