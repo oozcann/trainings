@@ -32,3 +32,4 @@ const styles = StyleSheet.create({
 // alignSelf: "flex-start" flex item'lara uygulanır. flex-end, center vs. kendi başlarına yönlemek için
 // flexBasis: content'e uygulanır. yükseklik gibi ama boşta kalan alanı orantısal olarak alır
 // flexShrink: content'e uygulanır. Yan yana iken box dışına taşıyorsa sığdırmak için 1 gibi değer verilir.
+// flexGrow: content'e uygulanır. Altta boşluk varsa o boşluğa doğru kendini genişletir.
