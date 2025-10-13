@@ -14,6 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         marginTop: 20,
+        flexDirection: "column-reverse", // column(defaulf), column-reverse,row,row-reverse
         borderWidth: 6,
         borderColor: "yellow",
         flex:1
