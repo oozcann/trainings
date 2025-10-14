@@ -1,10 +1,21 @@
-import { View,Text,StyleSheet,Dimensions,useWindowDimensions } from 'react-native';
+import { View,Text,StyleSheet,Dimensions } from 'react-native';
+import { useState,useEffect } from 'react';
+import Box from './components/Box';
 
 export default function App() {
   
-
-  const deviceWidth = useWindowDimensions().width;
-  const deviceHeight = useWindowDimensions().height;
+  const [dimensions, setDimensions] = useState({
+    window: Dimensions.get("window")
+  })
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener("change",({window}) => {
+      setDimensions({window});
+    })
+    return () => subscription?.remove();
+  })
+  const {window} = dimensions;
+  const deviceWidth = window.width;
+  const deviceHeight = window.height;
 console.log(deviceHeight,deviceWidth);
   return (
     <View style={styles.container}>
