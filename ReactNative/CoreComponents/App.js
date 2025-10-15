@@ -33,6 +33,7 @@ export default function App() {
                     )
                 }}
                 ItemSeparatorComponent={<View style={{height: 16}}></View>}
+                ListEmptyComponent={<Text>No items found</Text>}
             />
         </SafeAreaView>
     </SafeAreaProvider>
