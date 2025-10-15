@@ -4,14 +4,23 @@ import { useState } from 'react';
 
 export default function App() {
     
-  const [name, setName] = useState("Onur");  
+  const [name, setName] = useState("");  
     
   return (
     <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
             
-            <TextInput style={styles.input} value={name} onChangeText={setName}></TextInput>
-            
+            <TextInput 
+                style={styles.input} 
+                value={name} 
+                onChangeText={setName}
+                placeholder='Adınız'
+                // secureTextEntry bu key yazılanı maskeler/gizler
+                keyboardType='numeric' // sayıların olduğu klavyeyi açar.
+                autoCorrect={false}
+                autoCapitalize="none"
+                ></TextInput>
+            <Text style={{fontSize: 30,marginTop:20}}>Name is {name}</Text>
         </SafeAreaView>
     </SafeAreaProvider>
     
