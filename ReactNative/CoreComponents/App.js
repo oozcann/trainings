@@ -34,6 +34,8 @@ export default function App() {
                 }}
                 ItemSeparatorComponent={<View style={{height: 16}}></View>}
                 ListEmptyComponent={<Text>No items found</Text>}
+                ListHeaderComponent={<Text style={styles.headerText}>Pokemon List</Text>}
+                ListFooterComponent={<Text style={styles.footerText}>End of the List</Text>}
             />
         </SafeAreaView>
     </SafeAreaProvider>
@@ -59,5 +61,15 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 30
+    },
+    headerText: {
+        fontSize: 24,
+        textAlign: "center",
+        marginBottom: 12
+    },
+    footerText: {
+        fontSize: 24,
+        textAlign: "center",
+        marginTop: 12
     }
 })  
