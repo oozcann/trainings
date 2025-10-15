@@ -1,7 +1,8 @@
-import { ScrollView,View,Text,StyleSheet,Platform,StatusBar,FlatList } from 'react-native';
+import { ScrollView,View,Text,StyleSheet,Platform,StatusBar,FlatList,SectionList } from 'react-native';
 //import PokemonCard from './components/Pokemon/PokemonCard';
 import { SafeAreaProvider,SafeAreaView } from 'react-native-safe-area-context';
 import pokemonList from './data.json';
+import groupedPokemonList from "./grouped-data.json";
 
 export default function App() {
     
@@ -22,6 +23,7 @@ export default function App() {
                 }
             </ScrollView>
             */}
+            {/*
             <FlatList
                 data={pokemonList}
                 renderItem={({item}) => {
@@ -37,6 +39,24 @@ export default function App() {
                 ListHeaderComponent={<Text style={styles.headerText}>Pokemon List</Text>}
                 ListFooterComponent={<Text style={styles.footerText}>End of the List</Text>}
             />
+            */}
+            <SectionList
+                sections={groupedPokemonList}
+                renderItem={({item}) => {
+                    return (
+                        <View style={styles.card}>
+                            <Text style={styles.text}>{item}</Text>
+                        </View>
+                    )
+                }}  
+                renderSectionHeader={({section}) => {
+                    return (
+                        <Text style={styles.headerText}>{section.type}</Text>
+                    )
+                }}
+            />
+
+            
         </SafeAreaView>
     </SafeAreaProvider>
     
