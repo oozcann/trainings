@@ -1,4 +1,4 @@
-import { ScrollView,View,Text,StyleSheet,StatusBar, TextInput,Switch, Button, Alert } from 'react-native';
+import { ScrollView,View,Text,StyleSheet,StatusBar, TextInput,Switch, Button, Alert,Image,KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaProvider,SafeAreaView } from 'react-native-safe-area-context';
 import { use, useState } from 'react';
 
@@ -13,15 +13,24 @@ export default function App() {
     <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
             
-            <View style={styles.container}>
+            <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 0} style={styles.container}>
                 <View style={styles.form}>
+                    <Image
+                        source={require("./assets/adaptive-icon.png")}
+                        style={{
+                            width: 200,
+                            height: 400,
+                            alignSelf: "center",
+                            marginBottom: 50,
+                        }}
+                        />
                     <Text style={styles.label}>Username</Text>
                     <TextInput style={styles.input} value={username} onChangeText={() => setUsername} placeholder='Username'></TextInput>
                     <Text style={styles.label}>Password</Text>
                     <TextInput style={styles.input} value={password} onChangeText={() => setPassword} secureTextEntry placeholder='Enter password'></TextInput>
                     <Button title='Login' onPress={() => {}}></Button>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
             
             {/*
             <TextInput 
