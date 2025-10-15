@@ -8,6 +8,18 @@ export default function App() {
   const [isDarkMode,setIsDarkMode] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let errors = {};
+
+    if (!username) errors.username = "Username is required";
+    if (!password) errors.password = "Password is required";
+
+    setErrors(errors);
+
+    return Object.keys(errors).length === 0;
+  };
   
   return (
     <SafeAreaProvider>
@@ -26,8 +38,15 @@ export default function App() {
                         />
                     <Text style={styles.label}>Username</Text>
                     <TextInput style={styles.input} value={username} onChangeText={() => setUsername} placeholder='Username'></TextInput>
+                     {errors.username ? (
+                        <Text style={styles.errorText}>{errors.username}</Text>
+                        ) : null
+                    }
                     <Text style={styles.label}>Password</Text>
                     <TextInput style={styles.input} value={password} onChangeText={() => setPassword} secureTextEntry placeholder='Enter password'></TextInput>
+                    {errors.password ? (
+                    <Text style={styles.errorText}>{errors.password}</Text>
+                    ) : null}
                     <Button title='Login' onPress={() => {}}></Button>
                 </View>
             </KeyboardAvoidingView>
