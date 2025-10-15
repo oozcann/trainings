@@ -21,6 +21,7 @@ export default function App() {
                 autoCapitalize="none"
                 ></TextInput>
             <Text style={{fontSize: 30,marginTop:20}}>Name is {name}</Text>
+            <TextInput style={[styles.input,{height: 100}]} multiline/>
         </SafeAreaView>
     </SafeAreaProvider>
     
@@ -36,7 +37,6 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         marginTop: 10,
-        padding: 10,
         borderWidth: 1
     }
 })  
