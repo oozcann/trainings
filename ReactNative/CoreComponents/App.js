@@ -1,4 +1,4 @@
-import { ScrollView,View,Text,StyleSheet,Platform,StatusBar } from 'react-native';
+import { ScrollView,View,Text,StyleSheet,Platform,StatusBar,FlatList } from 'react-native';
 //import PokemonCard from './components/Pokemon/PokemonCard';
 import { SafeAreaProvider,SafeAreaView } from 'react-native-safe-area-context';
 import pokemonList from './data.json';
@@ -8,6 +8,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
+            {/*
             <ScrollView style={styles.scrollView}>
                 {
                     pokemonList.map(pokemon => {
@@ -20,6 +21,18 @@ export default function App() {
                     })
                 }
             </ScrollView>
+            */}
+            <FlatList
+                data={pokemonList}
+                renderItem={({item}) => {
+                    return(
+                        <View style={styles.card} key={item.id}>
+                            <Text style={styles.text}>{item.type}</Text>
+                            <Text style={styles.text}>{item.name}</Text>
+                        </View>
+                    )
+                }}
+            />
         </SafeAreaView>
     </SafeAreaProvider>
     
