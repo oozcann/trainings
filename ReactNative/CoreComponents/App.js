@@ -10,12 +10,20 @@ export default function App() {
   const [postTitle, setPostTitle] = useState("");
   const [postBody, setPostBody] = useState("");
   const [isPosting, setIsPosting] = useState(false);
+  const [error, setError] = useState("");
 
   const fetchData = async (limit = 10) => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}`);
-    const data = await response.json();
-    setPostList(data);
-    setIsLoading(false);
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}`);
+      const data = await response.json();
+      setPostList(data);
+      setIsLoading(false);
+      setError("");
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setIsLoading(false);
+      setError("Failed to fetch post list.");
+    }
   }
   
   const addPost = async () => {
@@ -38,8 +46,10 @@ export default function App() {
       setPostList([newPost, ...postList]);
       setPostTitle("");
       setPostBody("");
+      setError("");
     } catch (error) {
       console.error("Error adding new post:", error);
+      setError("Failed to add new post.");
     }
     setIsPosting(false);
   };
@@ -66,36 +76,40 @@ export default function App() {
   return (
     <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
-            <View style={styles.inputContainer}>
-              <TextInput
-                style={styles.input}
-                placeholder="Post Title"
-                value={postTitle}
-                onChangeText={setPostTitle}
-              />
-              <TextInput
-                style={styles.input}
-                placeholder="Post Body"
-                value={postBody}
-                onChangeText={setPostBody}
-              />
-              <Button
-                title={isPosting ? "Adding..." : "Add Post"}
-                onPress={addPost}
-                disabled={isPosting}
-              />
-            </View>
-            <View style={styles.listContainer}>
-              <FlatList
+            {error ? (
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>{error}</Text>
+        </View>
+      ) : (
+        <>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.input}
+              placeholder="Post Title"
+              value={postTitle}
+              onChangeText={setPostTitle}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Post Body"
+              value={postBody}
+              onChangeText={setPostBody}
+            />
+            <Button
+              title={isPosting ? "Adding..." : "Add Post"}
+              onPress={addPost}
+              disabled={isPosting}
+            />
+          </View>
+          <View style={styles.listContainer}>
+            <FlatList
               data={postList}
-              renderItem={({item}) => {
-                return (
-                  <View style={styles.card}>
-                    <Text style={styles.nameText}>{item.title}</Text>
-                    <Text style={styles.typeText}>{item.body}</Text>
-                  </View>
-                )
-              }}
+              renderItem={({ item }) => (
+                <View style={styles.card}>
+                  <Text style={styles.nameText}>{item.title}</Text>
+                  <Text style={styles.typeText}>{item.body}</Text>
+                </View>
+              )}
               keyExtractor={(item) => item.id.toString()}
               ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
               ListEmptyComponent={<Text>No Posts Found</Text>}
@@ -107,8 +121,10 @@ export default function App() {
               }
               refreshing={refreshing}
               onRefresh={handleRefresh}
-              />
-            </View>
+            />
+          </View>
+        </>
+      )}
         </SafeAreaView>
     </SafeAreaProvider>
     
