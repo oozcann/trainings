@@ -27,7 +27,11 @@ export default function App() {
                     title: "Welcome Home"
                 }}
             />
-            <Stack.Screen name='About' component={AboutScreen}/>
+            <Stack.Screen name='About' component={AboutScreen}
+            options={({ route }) => ({
+                title: route.params.name,
+            })}
+            />
         </Stack.Navigator>
     </NavigationContainer>
     
